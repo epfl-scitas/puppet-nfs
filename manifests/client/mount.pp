@@ -39,7 +39,7 @@ define nfs::client::mount (
       atboot   => $atboot,
       require  => [
         Nfs::Mkdir[$_nfs4_mount],
-        Anchor['nfs_client_ready'],
+        Class["nfs::client::${::nfs::params::osfamily}"],
       ],
     }
 
@@ -50,8 +50,6 @@ define nfs::client::mount (
         mount_name => $bindmount,
       }
     }
-
-    # dependencies for mount:
 
   } else {
 
@@ -77,7 +75,7 @@ define nfs::client::mount (
       atboot   => $atboot,
       require  => [
         Nfs::Mkdir[$_mount],
-        Anchor['nfs_client_ready'],
+        Class["nfs::client::${::nfs::params::osfamily}"],
       ],
     }
 

@@ -42,14 +42,6 @@ class nfs::client (
 
   validate_bool($nfs_v4)
 
-  # ensure dependencies for mount
-
-  Class["::nfs::client::${::nfs::params::osfamily}::install"] ->
-  Class["::nfs::client::${::nfs::params::osfamily}::configure"] ->
-  Class["::nfs::client::${::nfs::params::osfamily}::service"] ->
-  anchor { 'nfs_client_ready': } ->
-  Class['::nfs::client']
-
   if !defined( Class["nfs::client::${::nfs::params::osfamily}"]) {
     class{ "nfs::client::${::nfs::params::osfamily}":
       nfs_v4              => $nfs_v4,
