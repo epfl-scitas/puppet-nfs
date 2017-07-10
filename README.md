@@ -18,7 +18,7 @@
     * [Defined Type: nfs::client::mount](#defined-type-nfsclientmount)
 5. [Requirements](#requirements)
 6. [Limitations - OS compatibility, etc.](#limitations)
-7. [Contributing to the graphite module](#contributing)
+7. [Contributing to the NFS module](#contributing)
 
 ## Overview
 
@@ -561,7 +561,7 @@ If you want to have the full potential of this module its recommend to have stor
 
 ## Limitations
 
-##Contributing
+## Contributing
 
 Echocat modules are open projects. So if you want to make this module even better, you can contribute to this module on [Github](https://github.com/echocat/puppet-nfs).
 
